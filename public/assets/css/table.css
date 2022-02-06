@@ -1,0 +1,157 @@
+body{
+    /* background-color: #c4cfe2; */
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+
+.table{
+    /* border: 1px solid black; */
+    background-color: #f5f7fa;
+    padding:25px 0px;
+    margin-top: 50px;
+}
+.container_table{
+    margin-top: 20px;
+}
+
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.adan{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+table{
+    border-collapse: collapse;
+    /* width: 1400px; */
+    width: 95%;
+    margin: auto;
+    
+}
+
+.tab-search{
+    margin-right: 35px;
+    display: flex;
+    justify-content: space-around;
+}
+th{
+    background-color:#2d312f;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid #2d312f;;
+    border-right: 1px solid black;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #2d312f;;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    /* background-color: #c1c1e2; */
+}
+
+
+/* Pagination  Styling */
+.pagination {
+    display: block;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    margin: 20px;
+}
+
+.pagination li {
+    display:inline-block;
+    margin: 0 5px 0 0;
+}
+
+.pagination li a{
+    border: none;
+    background: #2d312f;;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.pagination li a:hover{
+    background: rgb(171, 241, 169);
+    color: white;
+}
+
+.dataTables_length{
+    /* border: 1px solid black; */
+    background-color: #2d312f;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form-control{
+    padding: 3px;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr {     border: 2px solid #dd7676;
+        margin-bottom: 10px; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "S.No."; }
+	td:nth-of-type(2):before { content: "Name"; }
+	td:nth-of-type(3):before { content: "Class"; }
+	td:nth-of-type(4):before { content: "Roll No."; }
+	td:nth-of-type(5):before { content: "Edit"; }
+	td:nth-of-type(6):before { content: "Delete"; }
+}
